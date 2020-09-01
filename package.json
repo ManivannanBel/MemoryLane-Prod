@@ -9,7 +9,7 @@
     "server": "nodemon src/app.ts",
     "client": "npm run start --prefix memory-lane-client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "build": "tsc -p .",
+    "build": "tsc -p ."
   },
   "author": "",
   "license": "ISC",
