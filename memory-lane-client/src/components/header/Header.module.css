@@ -1,0 +1,48 @@
+.logo{
+    font-family: Soleil,Helvetica,Arial,sans-serif !important; 
+    font-size: 1.5rem;
+    margin-right: 10px !important;
+}
+
+
+
+.signinButton{
+    background: #b58dff !important;
+    color: #ffffff !important;
+    border-radius: 20px !important;
+    border: none !important;
+    margin-left: 5px !important;
+}
+
+.signinButton:hover{
+    background: #c7aaff !important;
+}
+
+.header{
+    z-index: 2;
+    position: relative;
+    -webkit-box-shadow: 0 5px 3px -3px #c5c5c5;
+	   -moz-box-shadow: 0 5px 3px -3px #c5c5c5;
+	        box-shadow: 0 5px 3px -3px #c5c5c5;
+}
+
+.uName{
+    font-size: 18px;
+    cursor: pointer;
+    padding-top: 5px;
+    padding-right: 7px;
+    padding-left: 7px;
+}
+
+.uName:hover{
+    color: #b087fd;
+}
+
+.Userlink{
+    display: inline-flex;
+}
+
+.Userlink:hover{
+    text-decoration: none !important;
+}
+

@@ -1,0 +1,128 @@
+.createMoment1{
+    border-radius: 10px 10px 10px 0;
+    padding: 7px 16px 7px 16px;
+    background: #f8f5ff;
+box-shadow:  5px 5px 6px #dfdde6, 
+             -5px -5px 6px #ffffff;
+}
+
+.createText{
+    padding-bottom: 7px;
+    text-align: left;
+    font-size: 23px;
+} 
+
+.cmInpt{
+    background: #ffffff;
+}
+
+.form-control:focus .form-control:active {
+    outline: none !important;
+    box-shadow: none !important; 
+    -webkit-box-shadow: none !important;
+    border-color: #909090 !important;
+}
+
+.cmInpttextarea{
+    resize: none !important;
+}
+
+.uploadImgInp{
+    font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+.uploadImgBtn{
+    background: #b58dff !important;
+    color: #ffffff !important;
+    border-radius: 20px !important;
+    border: none !important;
+    padding: 13px;
+    height: 57px;
+    border-radius: 50px;
+    border: 2px solid #a472ff;
+}
+
+.dateSelectBtn{
+    background: #a676ff !important;
+    color: #ffffff !important;
+    border-radius: 20px !important;
+    border: none !important;
+    padding: 13px;
+    height: 57px;
+    border-radius: 50px;
+    border: 2px solid #a472ff;
+}
+
+.createMmtBtnCov{
+    margin-top: -5px;
+    width: fit-content;
+    border-radius: 0 0 10px 10px;
+    margin-bottom: 10px;
+    padding: 10px 16px 7px 16px;
+    background: #f8f5ff;
+box-shadow:  5px 5px 6px #dfdde6, 
+             -5px 0px 6px #ffffff;
+    z-index: 10;
+}
+
+.createMmtBtn{
+    background: #c2c2c2 !important;
+    color: #ffffff !important;
+    border-radius: 20px !important;
+    border: none !important;
+    padding: 13px;
+    height: 57px;
+    border: 2px solid #9e9e9e;
+}
+
+/* .createMmtBtn:hover{
+    background: #c9c9c9 !important;
+} */
+
+.uploadImgBtn span{
+    font-size: 16px;
+    vertical-align: super;
+}
+
+.createMmtBtn span{
+    font-size: 16px;
+    vertical-align: super;
+}
+
+.uploadImgBtn:hover{
+    background: #c7aaff !important;
+}
+
+.momentBtns{
+    display: flex;
+}
+
+.momentBtns div{
+    padding-right: 10px;
+}
+
+.uploadImgBtnGroup{
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.addGrpBtn{
+    background: #a676ff !important;
+    color: #ffffff !important;
+    border-radius: 20px !important;
+    border: none !important;
+    padding: 17px;
+    height: 57px;
+    border-radius: 50px;
+    border: 2px solid #a472ff;
+    cursor: pointer;
+}
+
+.calCov{
+    margin-left: auto;
+}

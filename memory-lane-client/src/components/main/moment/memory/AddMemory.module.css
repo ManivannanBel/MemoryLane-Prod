@@ -1,0 +1,25 @@
+.inpTa{
+    resize: none !important;
+    height: 70px !important;
+    font-size: 12.5px !important;
+    margin-bottom: 2px !important;
+}
+
+.bttmDiv{
+    /* position: absolute;  */
+    width: 100%;
+    bottom: 10px; 
+}
+
+.adMryBtn{
+    border-radius: 20px !important;
+    color: #ffffff !important;
+    background: #b58dff !important;
+    font-size: 11px !important;
+    border: none !important;
+    cursor: pointer;
+}
+
+.adMryBtn:hover{
+    background: #bc97ff !important;
+}

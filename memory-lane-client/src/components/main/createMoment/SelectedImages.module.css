@@ -1,0 +1,25 @@
+.selectedImg{
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+}
+
+.imgCol{
+    padding: 0 0 0 0 !important;
+}
+
+.removeImg{
+    position: absolute;
+    right: 24px;
+    color: #555555;
+    font-weight: 600;
+    background: #b6b6b6;
+    width: 24px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.removeImg:hover{
+    background: #cecece;
+    color: #252525;
+}

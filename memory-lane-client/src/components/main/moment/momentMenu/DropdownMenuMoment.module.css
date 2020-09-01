@@ -1,0 +1,43 @@
+ul{
+    text-decoration: none;
+}
+
+.drpdwnLst{
+  position: absolute;
+  right: 40px;
+  z-index: 2;
+}
+
+.lst{
+    background: #494949;
+    color: #c2c2c2;
+    border-radius: 8px;
+    border: 2px solid #2a2a2a;
+    padding: 0px 0px 0px 0px;
+    width: 200px;
+    
+}
+
+.lstItm{
+  text-align: center;
+}
+
+.lstItm:hover{
+    background-color: #363636;
+    color: #e4e4e4;
+    cursor: pointer;
+}
+
+.arwUp {
+    width: 0; 
+    height: 0; 
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #2a2a2a;
+    margin-left: 78.5%;
+  }
+
+  .arwWrpr{
+    margin: auto;
+    width: 100%;
+  }

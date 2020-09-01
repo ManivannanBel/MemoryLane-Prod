@@ -1,0 +1,10 @@
+.searchBar{
+    border-radius: 15px !important;
+}
+
+.searchBar:focus, .searchBar:active{
+    outline: none !important;
+    box-shadow: none !important; 
+    -webkit-box-shadow: none !important;
+    border-color: #909090 !important;
+}

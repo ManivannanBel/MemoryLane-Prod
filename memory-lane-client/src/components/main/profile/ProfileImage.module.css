@@ -1,0 +1,75 @@
+.prfImg{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.cnt{
+    margin: auto;
+    margin-bottom: 10px;
+    border-radius: 50%;
+}
+
+.pIOverlay{
+    position: absolute;
+    background: #5f5f5f;
+    opacity: 0.7;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    animation-name: openOverlay;
+    animation-duration: 0.5s;
+}
+
+@keyframes openOverlay{
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0.7;
+    }
+}
+
+.camCov{
+    height: inherit;
+    width: inherit;
+    margin: auto;
+    border-radius: 50%;
+}
+
+.camIco{
+    margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.uploadImgInp{
+    font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    
+}
+
+.uploadImgBtn{
+    background: #b58dff !important;
+    color: #ffffff !important;
+    border-radius: 20px !important;
+    border: none !important;
+    padding: 13px;
+    height: 57px;
+    border-radius: 50px;
+    border: 2px solid #a472ff;
+}
+
+.prfsvg{
+    font-size: 20px;
+}

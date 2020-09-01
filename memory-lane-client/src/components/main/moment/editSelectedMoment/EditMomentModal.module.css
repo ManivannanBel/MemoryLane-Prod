@@ -1,0 +1,60 @@
+
+.selectedModel .lftCov {
+    /* max-width: 1000px !important; */
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    /* margin-top: 20px !important; */
+    border-radius: 15px !important;
+    height: 100%;
+}
+
+.selectedModel > div > div{
+    height: 100% !important;
+}
+
+.selectedModel .modal-dialog{
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+}
+
+.selectedModel > div{
+    max-width: 1000px !important;
+    /* height: 90vh !important; */
+    /* min-height: 700px !important; */
+    /* height: 700px; */
+}
+
+.closeBtn{
+    /* position: absolute;
+    right: 10px;
+    top: 5px; */
+    cursor: pointer;
+    color: #000000;
+    font-weight: 1000;
+    font-size: 25px;
+    z-index: 10;
+    padding-right: 10px;
+    transition: 0.25s ease-out;
+}
+
+.closeBtn:hover{
+    color: #b9b9b9;
+}
+
+.drpdwn{
+    padding-top: 10px;
+}
+
+.trBtnWrpr{
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    display: inline-flex;
+    z-index: 10;
+}
+
+.backdrop{
+    z-index: 1050;
+    opacity: 0.8 !important;
+}

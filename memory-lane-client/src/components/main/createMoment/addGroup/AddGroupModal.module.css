@@ -1,0 +1,140 @@
+.model{
+  height: fit-content;
+  width: 500px;
+  background: #f3ecff;
+  border-radius: 5px;
+  padding-bottom: 10px;
+  min-height: 0;
+}
+
+.modalDialog {
+  max-width: none !important;
+  height: fit-content;
+  width: 500px;
+  border-radius: 5px;
+  padding-bottom: 10px;
+  min-height: 0;
+}
+
+.ttle{
+  width: 100%;
+}
+
+.ttle div{
+  padding-left: 20px;
+  padding-top: 10px;
+  font-weight: 500;
+}
+
+.input_tag {
+  background: white;
+  border: 1px solid #d6d6d6;
+  border-radius: 2px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.input_tag input {
+  border: none;
+  width: 100%;
+}
+
+.input_tag__tags {
+  display: inline-flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  padding: 0px 3px 0px 3px;
+}
+
+.input_tag__tags li {
+  align-items: center;
+  background: #85A3BF;
+  border-radius: 2px;
+  color: white;
+  display: flex;
+  font-weight: 300;
+  list-style: none;
+  /* margin-bottom: 5px;
+  margin-right: 5px; */
+  margin: 2px;
+  padding: 5px 10px;
+}
+
+.input_tag__tags li button {
+  align-items: center;
+  appearance: none;
+  background: #333333;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  display: inline-flex;
+  /* font-size: 12px; */
+  height: 15px;
+  justify-content: center;
+  line-height: 0;
+  margin: 2px;
+  padding: 0;
+  transform: rotate(45deg);
+  width: 15px;
+}
+
+.input_tag__tags li.input_tag__tags__input {
+  background: none;
+  flex-grow: 1;
+  padding: 0;
+}
+
+.inp{
+  border : 1px solid purple !important;
+}
+
+.btnWrpr{
+  margin-top : 7px;
+  display: inline-flex;
+  float: right;
+}
+
+
+.btn{
+  cursor: pointer;
+  background: #d199ff;
+  border: 1px solid #be6fff;
+  margin-right: 10px;
+  padding: 2px;
+}
+
+.ulo{
+  list-style-type: none;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  background: #f8f5ff;
+  border: 2px solid #e6dcff; 
+  position: absolute;
+  border-radius: 0 0 5px 5px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.ulo::before{
+    content: "";
+}
+
+.lst{
+  cursor: pointer;
+  display: inline-flex;
+  width: 100%;
+}
+
+.lst:hover{
+  background: #e6dcff;
+}
+
+.frm{
+  width: 100%;
+}
+
+

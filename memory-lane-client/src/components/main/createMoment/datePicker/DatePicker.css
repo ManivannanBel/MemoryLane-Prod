@@ -1,0 +1,143 @@
+.datePicker {	
+	position: relative;
+	width: 200px;
+	max-width: 320px;
+	height: 56px;
+	
+	cursor: pointer;
+	user-select: none;
+	z-index: 1040;
+	padding-right: 0 !important;
+}
+
+/*
+	background-color: #FFF;
+	box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+
+*/
+
+/* .datePicker:hover {
+	background-color: #F3F3F3;
+} */
+
+.datePicker .selectedDate {
+	background: #b58dff !important;
+    color: #ffffff !important;
+    border-radius: 20px !important;
+    border: none !important;
+    border-radius: 50px;
+	border: 2px solid #a472ff;
+
+	width: 150px;
+	height: 100%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+
+	padding-right:  0;
+	margin: auto;
+}
+
+.datePicker .dates {
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	right: 0;
+	padding-right: 0;
+	background-color: #FFF;
+
+	background: linear-gradient(145deg, #ffffff, #e6e6e6);
+box-shadow:  0px 0px 0px #ebebeb, 0px 0px 0px #ffffff;
+	border: 1px solid #e9e9e9;
+
+	border-radius: 20px;
+	margin-top: -15px;
+	overflow: hidden;
+}
+
+.datePicker .dates.active {
+	display: block;
+}
+
+.datePicker .dates .month {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 2px solid #EEE;
+	padding-right: 0;
+}
+
+.datePicker .dates .month .arrows {
+	width: 35px;
+	height: 35px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #313131;
+	font-size: 20px;
+	padding-right: 0;
+}
+
+.datePicker .dates .month .arrowL {
+	border-radius: 10px 0px 0px 0px;
+}
+
+.datePicker .dates .month .arrowR {
+	border-radius: 0px 10px 0px 0px;
+}
+
+.datePicker .dates .month .arrows:hover {
+	background-color: #F3F3F3;
+}
+
+.datePicker .dates .month .arrows:active {
+	background-color: #ff9d70;
+}
+
+.datePicker .dates .days {
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	height: fit-content;
+	padding-right: 0;
+}
+.datePicker .dates .days .day { 
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #313131;
+	padding: 1px 2px 1px 2px;
+	overflow: hidden;
+}
+
+.datePicker .dates .days .day:hover { 
+	background: #F3F3F3;
+}
+
+.datePicker .dates .days .day.selected {
+	background-color: #a270ff;
+}
+
+.mth{
+	color: #000000;
+	padding-right: 0 !important;
+}
+
+.noselect{
+	-webkit-user-select: none;  
+  -moz-user-select: none;    
+  -ms-user-select: none;      
+  user-select: none;
+}
+
+.resDateWrape{
+	width: inherit;
+	height: inherit;
+	padding-right: 0px;
+}
+
+.selectedDate{
+	width: fit-content;
+}

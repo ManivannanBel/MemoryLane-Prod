@@ -1,0 +1,78 @@
+.profile{
+   height: fit-content;
+   padding: 20px 0px 20px 0px;
+   margin-top: 7px;
+   border-radius: 25px;
+   background: #f8f5ff;
+   box-shadow:  2px 3px 6px #dfdde6,
+             -3px -3px 6px #ffffff;
+}
+
+.username{
+    font-size: 20px;
+    text-align: left;
+    color: #4319a5;
+}
+
+.names{
+    font-size: 21px;
+    color: #4319a5;
+}
+
+.namesDiv{
+    text-align: left;
+}
+
+.frndReqBtn{
+    margin: auto;
+    background-color: #938bff;
+    border-color: #8d87ff;
+    border-radius: 15px;
+    animation-duration: 2s;
+    position: relative;
+    z-index: 1;
+}
+
+.frndReqBtn:hover{
+    background-color: #aaa3ff; 
+    border-color: #938dff;
+}
+
+.frndReqBtn:focus{
+    background-color: #7b6fff; 
+    border-color: #938dff;
+}
+
+.relBtnDrpDwn{
+    width: 100%;
+    position: absolute;
+    background: #aaa5ff;
+    border-radius: 0 0 15px 15px;
+    padding-top: 10px;
+    margin-top: -10px;
+    left: 0;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.relStsBtnWrpr{
+    margin: auto;
+    position: relative;
+}
+
+.relOpts{
+    color: #f0f0f0;
+    padding: 3px 0px 3px 0px;
+    cursor: pointer;
+    
+}
+
+.relOpts:hover{
+    color: #ffffff;
+    background: #877cff;
+}
+
+.frndRqSnt{
+    text-align: center;
+    width: 100%;
+}

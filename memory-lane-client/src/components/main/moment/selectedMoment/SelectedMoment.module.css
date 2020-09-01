@@ -1,0 +1,113 @@
+.selectedMoment{ 
+    height: 100%;
+    background-color: #f3ecff;
+    border-radius: 15px !important;
+    box-shadow: inset 1px 1px 5px #444444, 
+            inset -1px -1px 5px #6a6a6a;
+}
+
+.lftCov{
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    /* margin-top: 20px !important; */
+    border-radius: 15px !important;
+    height: 100%;
+}
+
+.selectedMoment > div {
+    height: 100%;
+}
+
+.imgFNameCont{
+    display: flex;
+    padding: 15px 0 0 20px;
+    cursor: pointer;
+}
+
+.uname{
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.profPicSm{
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+}
+
+.title{
+    padding: 40px 0 0 10px;
+    font-weight: 500;
+}
+
+.desc{
+    padding: 3px 3px 3px 3px;
+    word-wrap: break-word;
+    font-size: 14px;
+    color: #555555;
+    overflow: auto;
+    border: 2px solid #d4d4d4;
+    border-radius: 3px;
+    margin: 5px 10px 0 10px;
+    height: 75%;
+    white-space: pre-wrap;
+}
+
+.clMoment{
+    padding-right: 0;
+    height: 100%;
+}
+
+.crMoment{
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.imgNav{
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    padding: 0 20px 0 20px;
+    width: 100%;
+    height: 35px;
+}
+
+.lAr{
+    float: left;
+    font-size: 30px;
+    color: #686868;
+    cursor: pointer;
+}
+
+.lAr:hover{
+    float: left;
+    font-size: 35px;
+    color: #999999;
+    cursor: pointer;
+}
+
+.rAr{
+    float: right;
+    font-size: 30px;
+    color: #686868;
+    cursor: pointer;
+}
+
+.rAr:hover{
+    float: right;
+    font-size: 35px;
+    color: #999999;
+    cursor: pointer;
+}
+
+.rw1Ht{
+    height: 45%;
+}
+
+.rw2Ht{
+    height: 55%;
+}

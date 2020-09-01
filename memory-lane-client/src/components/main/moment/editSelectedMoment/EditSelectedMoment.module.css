@@ -1,0 +1,134 @@
+.selectedMoment{ 
+    height: 100%;
+    background-color: #f3ecff;
+    border-radius: 15px !important;
+    box-shadow: inset 1px 1px 5px #444444, 
+            inset -1px -1px 5px #6a6a6a;
+    padding: 10px 40px 10px 40px;
+}
+
+.imgs{
+    padding: 10px 0 0 0;
+}
+
+
+.optTit{
+    font-size: 15px;
+    font-weight: 500;
+    width: 100%;
+    text-align: center;
+}
+
+.ti{
+    font-size: 15px;
+    font-weight: 500;
+    width: 100%;
+}
+
+.title{
+    padding: 0px 0 0 10px;
+    font-weight: 500;
+}
+
+.desc{
+    padding: 0 10px 0 10px;
+    word-wrap: break-word;
+    font-size: 14px;
+    color: #555555;
+    resize: none !important;
+}
+
+.clMoment{
+    padding-right: 0;
+    height: 100%;
+}
+
+.crMoment{
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.imgNav{
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    padding: 0 20px 0 20px;
+    width: 100%;
+    height: 35px;
+}
+
+.lAr{
+    float: left;
+    font-size: 30px;
+    color: #686868;
+    cursor: pointer;
+}
+
+.lAr:hover{
+    float: left;
+    font-size: 35px;
+    color: #999999;
+    cursor: pointer;
+}
+
+.rAr{
+    float: right;
+    font-size: 30px;
+    color: #686868;
+    cursor: pointer;
+}
+
+.rAr:hover{
+    float: right;
+    font-size: 35px;
+    color: #999999;
+    cursor: pointer;
+}
+
+.rw1Ht{
+    height: 45%;
+}
+
+.rw2Ht{
+    height: 55%;
+}
+
+.updtBtn{
+    background: #b58dff !important;
+    color: #ffffff !important;
+    border-radius: 20px !important;
+    padding: 6px 15px 6px 15px;
+    border: 2px solid #b5b0ff !important;
+}
+
+.updtBtn:hover{
+    background: #c2beff !important;
+}
+
+.uploadImgInp{
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+.uploadImgBtn{
+    background: #b58dff !important;
+    color: #ffffff !important;
+    border-radius: 20px !important;
+    border: none !important;
+    padding: 13px;
+    height: 160px;
+    width: 160px;
+    border-radius: 50px;
+    border: 2px solid #a472ff;
+}
+
+.uploadImgBtn span{
+    font-size: 16px;
+    vertical-align: super;
+}
