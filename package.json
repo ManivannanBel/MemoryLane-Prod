@@ -10,7 +10,7 @@
     "client": "npm run start --prefix memory-lane-client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "build": "tsc -p .",
-    "heroku-postbuild" : "NPM_CONFIG_PRODUCTION=false npm start"
+    "heroku-postbuild" : "NPM_CONFIG_PRODUCTION=false"
   },
   "author": "",
   "license": "ISC",
