@@ -68,6 +68,8 @@ const Header = (props: any) => {
     if (!props.auth.isAuth) {
       return (
         <React.Fragment>
+          <Nav className="mr-auto">
+          </Nav>
           <Button
             variant="outline-primary"
             className={headerStyles.signinButton}
@@ -87,6 +89,9 @@ const Header = (props: any) => {
     } else {
       return (
         <React.Fragment>
+          <Nav className="mr-auto">
+            <SearchBar />
+          </Nav>
           <Link className={headerStyles.Userlink} to={`/${username}`}>
             <UserImg img={profileImage} />
             <div className={headerStyles.uName}>{username}</div>
@@ -112,9 +117,7 @@ const Header = (props: any) => {
               Memory lane
             </Navbar.Brand>
           </Link>
-          <Nav className="mr-auto">
-            <SearchBar />
-          </Nav>
+          
           {renderHeader()}
         </Navbar>
       </div>

@@ -93,7 +93,7 @@ function Moment(props: any) {
     <React.Fragment>
       <div className={MomentStyles.moment} >
         <Row className={"pt-2"}>
-          <Col sm={7}>
+          <Col xs={7}>
             <Link to={moment.owner.username} className="no-a">
               <div className={MomentStyles.wrpr}>
                 <img
@@ -106,11 +106,8 @@ function Moment(props: any) {
               </div>
             </Link>
           </Col>
-          <Col sm={2}>
-            
-          </Col>
-          <Col sm={3}>
-            <Row>
+          <Col xs={5}>
+            <Row bsPrefix={MomentStyles.dtWrpr}>
             {/* {<div className={MomentStyles.mtbl}>
               <MeatballIco/>
             </div>} */}

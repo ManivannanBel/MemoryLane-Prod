@@ -3,3 +3,9 @@
     -moz-user-select: none;
     pointer-events: none;
 }
+
+@media screen and (max-width: 700px){
+    .image{
+        width: 100% !important;
+    }
+  }

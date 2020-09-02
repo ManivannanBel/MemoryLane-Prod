@@ -45,3 +45,12 @@
     background: #f8f5ff;
     box-shadow: 5px 5px 6px #dfdde6, -5px -5px 6px #ffffff;
 }
+
+@media screen and (max-width: 700px){
+    .memoryLaneP {
+      padding: 0 !important;
+    }
+    .lane{
+      padding: 0;
+    }
+}
