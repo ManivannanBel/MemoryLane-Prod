@@ -89,7 +89,7 @@ if(process.env.NODE_ENV === 'production'){
 }
 
 
-const PORT : Number = 5000;
+const PORT : Number = process.env.PORT as any || 5000;
 
 app.listen(PORT, () => {
     console.log('Server runs at 5000');
