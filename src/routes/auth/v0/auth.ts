@@ -30,7 +30,7 @@ router.get(
     const token = await AuthService.generateJWTToken(payload);
     //console.log(token);
     const query = querystring.stringify({success : true, token})
-    res.redirect('http://localhost:3000/?'+query);
+    res.redirect('https://memorylane-api.herokuapp.com/?'+query);
   }
 );
 
@@ -48,7 +48,7 @@ router.get(
     const token = await AuthService.generateJWTToken(payload);
     //console.log(token);
     const query = querystring.stringify({success : true, token})
-    res.redirect('http://localhost:3000/?'+query);
+    res.redirect('https://memorylane-api.herokuapp.com/?'+query);
   }
 );
 
