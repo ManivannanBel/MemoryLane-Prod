@@ -46,7 +46,7 @@ module.exports = (passport : any) => {
                     //Check if the user has already registered with facebook auth
                     const checkProfileResult : Document = await ProfileModel.findOne({email : profile.emails[0].value});
                     if(checkProfileResult){
-                        //If that fucker already had logged in using facebook, then just update the googleID in db
+                        //If that user already had logged in using facebook, then just update the googleID in db
                         const newProfileResult :Document = await ProfileModel.findOneAndUpdate({email : profile.emails[0].value}, {googleId : profile.id});
                         done(null, newProfileResult);                        
                     }else{
@@ -98,7 +98,7 @@ module.exports = (passport : any) => {
                             const checkProfileResult = await ProfileModel.findOne({email : profile.emails[0].value});
                             if(checkProfileResult){
                                 console.log('oauth exist');
-                                //If that fucker already had logged in using facebook, then just update the googleID in db
+                                //If that user already had logged in using facebook, then just update the googleID in db
                                 try{
                                     const newProfileResult = await ProfileModel.findOneAndUpdate({email : profile.emails[0].value}, {facebookId : profile.id});
                                     done(null, newProfileResult);                        
