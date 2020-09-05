@@ -60,7 +60,7 @@ router.get('/', passport.authenticate('jwt', {session : false}), async (req : Re
             const response : IMomentResponse = {
                 id : momentResult[i].id,
                 title : momentResult[i].title,
-                description : momentResult[i].title,
+                description : momentResult[i].description,
                 group : group,
                 files : urls,
                 date : momentResult[i].date,
