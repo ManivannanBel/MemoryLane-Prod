@@ -30,7 +30,11 @@ router.get(
     const token = await AuthService.generateJWTToken(payload);
     //console.log(token);
     const query = querystring.stringify({success : true, token})
-    res.redirect('http://localhost:3000/?'+query);
+    if(process.env.NODE_ENV === 'production'){
+      res.redirect('https://memorylane-api.herokuapp.com/?'+query);
+    }else{
+      res.redirect('http://localhost:3000/?'+query);
+    }
   }
 );
 
@@ -48,7 +52,11 @@ router.get(
     const token = await AuthService.generateJWTToken(payload);
     //console.log(token);
     const query = querystring.stringify({success : true, token})
-    res.redirect('http://localhost:3000/?'+query);
+    if(process.env.NODE_ENV === 'production'){
+      res.redirect('https://memorylane-api.herokuapp.com/?'+query);
+    }else{
+      res.redirect('http://localhost:3000/?'+query);
+    }
   }
 );
 
