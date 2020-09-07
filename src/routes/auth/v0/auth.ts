@@ -107,34 +107,37 @@ router.post("/register", async (req: Request, res: Response) => {
     profileImage : ''
   }
 
-  ProfileModel.findOne({email : email})
-                .then(profile => {
-                  if(profile){
-                    return res.status(409).send('profile already exists');
-                  }else{
-                    bcrypt.genSalt(10, (err, salt) => {
-                      bcrypt.hash(password, salt, (err, hash) => {
-                        if(err){
-                          throw err;
-                        }else{
-                          profileObject.password = hash;
-                          new ProfileModel(profileObject)
-                                .save()
-                                .then(profile => {
-                                  return res.status(201).send('profile created');
-                                })
-                                .catch(err => {
-                                  console.log(err);
-                                });
-                        }
-                      });
-                    });                  
-                  }
-                })
-                .catch(err => {
-                  console.log(err);    
-                });
-
+  try{
+    ProfileModel.findOne({email : email})
+    .then(profile => {
+      if(profile){
+        return res.status(409).send('profile already exists');
+      }else{
+        bcrypt.genSalt(10, (err, salt) => {
+          bcrypt.hash(password, salt, (err, hash) => {
+            if(err){
+              throw err;
+            }else{
+              profileObject.password = hash;
+              new ProfileModel(profileObject)
+                    .save()
+                    .then(profile => {
+                      return res.status(201).send('profile created');
+                    })
+                    .catch(err => {
+                      console.log(err);
+                    });
+            }
+          });
+        });                  
+      }
+    })
+    .catch(err => {
+      console.log(err);    
+    });
+  }catch(err){
+    res.status(502).send('user registeration unsuccessfull');
+  }
 });
 
 //Sign in  controller
@@ -154,26 +157,30 @@ router.post("/signin", async (req: Request, res: Response) => {
     return;
   }
 
-  ProfileModel.findOne({ email }).then( async (profile: IProfile) => {
-    if (!profile) {
-      res.status(401).json({ error: "Email or password incorrect" });
-    } else {
-      if(!profile.password){
+  try{
+    ProfileModel.findOne({ email }).then( async (profile: IProfile) => {
+      if (!profile) {
         res.status(401).json({ error: "Email or password incorrect" });
-      }else{
-        bcrypt.compare(password, profile.password).then( async (isMatch) => {
-          if (isMatch) {
-            const payload = { isAuth: true, username: profile.username, id : profile._id };
-            const token = await AuthService.generateJWTToken(payload);
-            //console.log(token);
-            res.status(200).send({success : true, token});
-          } else {
-            res.status(401).json({ error: "Email or password incorrect" });
-          }
-        }); 
+      } else {
+        if(!profile.password){
+          res.status(401).json({ error: "Email or password incorrect" });
+        }else{
+          bcrypt.compare(password, profile.password).then( async (isMatch) => {
+            if (isMatch) {
+              const payload = { isAuth: true, username: profile.username, id : profile._id };
+              const token = await AuthService.generateJWTToken(payload);
+              //console.log(token);
+              res.status(200).send({success : true, token});
+            } else {
+              res.status(401).json({ error: "Email or password incorrect" });
+            }
+          }); 
+        }
       }
-    }
-  });
+    });
+  }catch(err){
+    res.status(502).send('user login unsuccessfull');
+  }
 });
 
 //Sign out  controller
