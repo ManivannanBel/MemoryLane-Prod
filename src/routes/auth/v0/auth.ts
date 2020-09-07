@@ -104,13 +104,13 @@ router.post("/register", async (req: Request, res: Response) => {
     firstname : username,
     email,
     password,
-    profileImage : 'https://firebasestorage.googleapis.com/v0/b/memory-lane-68e6c.appspot.com/o/prodef.png?alt=media&token=8e86bcd7-1651-40db-8dc7-93328e995243'
+    profileImage : ''
   }
 
   ProfileModel.findOne({email : email})
                 .then(profile => {
                   if(profile){
-                    res.send('profile already exists');
+                    return res.status(409).send('profile already exists');
                   }else{
                     bcrypt.genSalt(10, (err, salt) => {
                       bcrypt.hash(password, salt, (err, hash) => {
@@ -121,7 +121,7 @@ router.post("/register", async (req: Request, res: Response) => {
                           new ProfileModel(profileObject)
                                 .save()
                                 .then(profile => {
-                                  res.send('profile created');
+                                  return res.status(201).send('profile created');
                                 })
                                 .catch(err => {
                                   console.log(err);
@@ -156,10 +156,10 @@ router.post("/signin", async (req: Request, res: Response) => {
 
   ProfileModel.findOne({ email }).then( async (profile: IProfile) => {
     if (!profile) {
-      res.status(404).json({ error: "Email or password incorrect" });
+      res.status(401).json({ error: "Email or password incorrect" });
     } else {
       if(!profile.password){
-        res.status(404).json({ error: "Email or password incorrect" });
+        res.status(401).json({ error: "Email or password incorrect" });
       }else{
         bcrypt.compare(password, profile.password).then( async (isMatch) => {
           if (isMatch) {
@@ -168,7 +168,7 @@ router.post("/signin", async (req: Request, res: Response) => {
             //console.log(token);
             res.status(200).send({success : true, token});
           } else {
-            res.status(404).json({ error: "Email or password incorrect" });
+            res.status(401).json({ error: "Email or password incorrect" });
           }
         }); 
       }
