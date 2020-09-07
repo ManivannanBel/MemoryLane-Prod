@@ -109,11 +109,14 @@ router.post("/register", async (req: Request, res: Response) => {
 
   try{
     ProfileModel.findOne({email : email})
-    .then(profile => {
+    .then(async (profile) => {
       if(profile){
         return res.status(409).send({error : 'email already exists'});
       }else{
-        
+        const usernameCheck = await ProfileModel.findOne({username : username}).exec();
+        if(usernameCheck){
+          return res.status(409).send({error : 'username already exists'});
+        }
         bcrypt.genSalt(10, (err, salt) => {
           bcrypt.hash(password, salt, (err, hash) => {
             if(err){
@@ -135,7 +138,7 @@ router.post("/register", async (req: Request, res: Response) => {
     })
     .catch(err => {
       //console.log(err);  
-      res.status(502).send({error : 'username may be already exist'});  
+      res.status(502).send({error : 'user registeration unsuccessfull'});  
     });
   }catch(err){
     res.status(502).send({error : 'user registeration unsuccessfull'});
