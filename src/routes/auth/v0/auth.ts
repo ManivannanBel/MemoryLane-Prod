@@ -134,10 +134,11 @@ router.post("/register", async (req: Request, res: Response) => {
       }
     })
     .catch(err => {
-      console.log(err);    
+      //console.log(err);  
+      res.status(502).send({error : 'username may be already exist'});  
     });
   }catch(err){
-    res.status(502).send({error : 'username may be already exist'});
+    res.status(502).send({error : 'user registeration unsuccessfull'});
   }
 });
 
