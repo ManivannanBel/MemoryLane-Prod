@@ -113,6 +113,7 @@ router.post("/register", async (req: Request, res: Response) => {
       if(profile){
         return res.status(409).send('profile already exists');
       }else{
+        
         bcrypt.genSalt(10, (err, salt) => {
           bcrypt.hash(password, salt, (err, hash) => {
             if(err){
