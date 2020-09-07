@@ -87,7 +87,7 @@ if(process.env.NODE_ENV === 'production'){
         res.sendFile(path.resolve(__dirname, 'memory-lane-client', 'build', 'index.html'));
     });
 }
-
+    
 
 const PORT : Number = process.env.PORT as any || 5000;
 

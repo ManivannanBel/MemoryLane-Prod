@@ -49,7 +49,7 @@ router.post('/:momentId', passport.authenticate('jwt', {session : false}), async
 });
 
 //Get all memories controller
-router.get('/:momentId', async (req : Request, res : Response) => {
+router.get('/:momentId',  passport.authenticate('jwt', {session : false}), async (req : Request, res : Response) => {
     
     const momentId = req.params.momentId;
     //console.log(momentId);
@@ -88,13 +88,22 @@ router.get('/:momentId', async (req : Request, res : Response) => {
 });
 
 //Update memory controller
-router.put('/:momentId/:memoryId', async (req : Request, res : Response) => {
+router.put('/:momentId/:memoryId',  passport.authenticate('jwt', {session : false}), async (req : Request, res : Response) => {
     res.send('update memory');
 });
 
 //Delete memory controller
-router.delete('/:momentId/:memoryId', async (req : Request, res : Response) => {
-    res.send('delete memory');
+router.delete('/:momentId/:memoryId',  passport.authenticate('jwt', {session : false}), async (req : Request, res : Response) => {
+    const user : any = req.user;
+    const {momentId, memoryId} = req.params;
+    try{
+        console.log(momentId + " " + memoryId);
+        const result = await MemoryModel.findOneAndDelete({_id : memoryId, owner : user._id, moment : momentId}).exec();
+        console.log(result);
+        res.status(200).send("Memory deleted");
+    }catch(err){
+        res.status(500).send("error in deletion of memory");
+    }
 });
 
 module.exports = router;
