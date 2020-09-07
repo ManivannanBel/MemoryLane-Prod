@@ -33,8 +33,14 @@ router.post('/', passport.authenticate('jwt', {session : false}), multer.fields(
     
     //console.log(req.body);
     const {title, description, date} = req.body;
-    console.log(req.body);
-    console.log(req.body.group);
+
+    let {visibility} = req.body;
+    
+    if(!visibility){
+        visibility = 0;
+    }
+    // console.log(req.body);
+    // console.log(req.body.group);
     
     const user : IProfile = (req.user as IProfile)
     //console.log(user);
@@ -66,6 +72,7 @@ router.post('/', passport.authenticate('jwt', {session : false}), multer.fields(
         description,
         date,
         createdAt : new Date(),
+        visibility,
         group : groupId,
         isActive : true
     }
@@ -235,7 +242,12 @@ router.get('/:username', async (req : Request, res : Response) => {
 
 //Update moment controller
 router.put('/:momentId', passport.authenticate('jwt', {session : false}), multer.array('file', 10), async (req : Request, res : Response) => {
-    const { title, description } = req.body;
+    const { title, description} = req.body;
+    let {visibility} = req.body;
+    
+    if(!visibility){
+        visibility = 0;
+    }
     // console.log(req.body);
     // console.log(req.body.existingUrls);
     // console.log(typeof(req.body.existingUrls));
@@ -256,7 +268,7 @@ router.put('/:momentId', passport.authenticate('jwt', {session : false}), multer
         }
 
         //update moment title, description, groups
-        const updatedMoment : IMoment = await MomentModel.findOneAndUpdate({_id : momentId, ownerId : user._id}, {title, description},{new : true}).exec();
+        const updatedMoment : IMoment = await MomentModel.findOneAndUpdate({_id : momentId, ownerId : user._id}, {title, description, visibility},{new : true}).exec();
         //console.log(updatedMoment);
         let newUrls : Array<string> = []
 

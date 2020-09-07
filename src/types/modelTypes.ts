@@ -23,6 +23,7 @@ export interface IMoment extends Document{
     description : string,
     date : Date,
     createdAt : Date,
+    visibility : number,
     group : Array<String>,
     isActive : boolean
 }

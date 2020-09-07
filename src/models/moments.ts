@@ -27,6 +27,12 @@ const momentSchema = new Schema({
         default : Date.now,
         required : true
     },
+    visibility : {
+        //0 private(only to friends)
+        //1 public(every user)
+        type : Number,
+        default : 0
+    },
     group : {
         type : [mongoose.Types.ObjectId]
     },
