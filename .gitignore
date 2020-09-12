@@ -1,2 +1,4 @@
 node_modules
 keys_dev.ts
+firebasekey_dev.ts
+firebasekey.json
