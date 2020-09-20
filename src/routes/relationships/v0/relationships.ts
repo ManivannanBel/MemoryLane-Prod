@@ -2,6 +2,7 @@ import express, {Request, Response} from 'express';
 import mongoose, {Document, Model} from 'mongoose';
 import { IRelationship, IProfile } from '../../../types/modelTypes';
 import passport from 'passport';
+import { IPerson } from '../../../types/responseTypes';
 
 const router = express.Router();
 
@@ -70,7 +71,7 @@ router.post('/fr', passport.authenticate('jwt', {session : false}), async (req :
 });
 
 //get relationship status
-router.get('/:username2', passport.authenticate('jwt', {session : false}), async (req : Request, res : Response) => {
+router.get('/status/:username2', passport.authenticate('jwt', {session : false}), async (req : Request, res : Response) => {
     const {username2} = req.params;
     const user1 : any = req.user;
     console.log('llll');
@@ -102,7 +103,7 @@ router.get('/:username2', passport.authenticate('jwt', {session : false}), async
 });
 
 //accept frient request
-router.put('/:action', passport.authenticate('jwt', {session : false}), async (req : Request, res : Response) => {
+router.put('/fr/:action', passport.authenticate('jwt', {session : false}), async (req : Request, res : Response) => {
     const {user2username} = req.body;
     const user1 : any = req.user;
     const {action} = req.params;
@@ -230,6 +231,38 @@ router.put('/:action', passport.authenticate('jwt', {session : false}), async (r
     }catch(err){
         console.log(err);
         res.status(400).send(err);
+    }
+});
+
+router.get('/friends', passport.authenticate('jwt', {session : false}), async (req : Request, res : Response) => {
+    const user : any = req.user;
+    try{
+        const friends : Array<IRelationship> = await RelationshipModel.find({$or : [{user1 : user._id}, {user2 : user._id}]}).select('user1 user2').populate('user1', 'firstname lastname username profileImage _id').populate('user2', 'firstname lastname username profileImage _id').exec();
+        const response = [];
+        for(let i = 0; i < friends.length; i++){
+            let user1 : any = friends[i].user1;
+            let user2 : any = friends[i].user2;
+            let person = {};
+            if(user.equals(user1._id)){
+                person = {
+                    firstname: user2.firstname,
+                    lastname: user2.lastname,
+                    username: user2.username,
+                    profileImage: user2.profileImage
+                }
+            }else{
+                person = {
+                    firstname: user1.firstname,
+                    lastname: user1.lastname,
+                    username: user1.username,
+                    profileImage: user1.profileImage
+                }
+            }
+            response.push(person);
+        }
+        res.status(200).send(response);
+    }catch(err){
+        res.status(500).send(err);
     }
 });
 
