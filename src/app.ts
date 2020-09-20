@@ -29,7 +29,7 @@ app.use(bodyParser.urlencoded({extended : false}));
 app.use(bodyParser.json());
 
 //Firebase Init
-var serviceAccount = require("./config/firebasekey.json");    
+var serviceAccount = require("./config/firebasekey.ts");    
 firebaseAdmin.initializeApp({
     credential: firebaseAdmin.credential.cert(serviceAccount),
     storageBucket: "gs://memory-lane-68e6c.appspot.com"
