@@ -234,16 +234,18 @@ router.put('/fr/:action', passport.authenticate('jwt', {session : false}), async
     }
 });
 
-router.get('/friends', passport.authenticate('jwt', {session : false}), async (req : Request, res : Response) => {
+router.get('/friends/:username', passport.authenticate('jwt', {session : false}), async (req : Request, res : Response) => {
     const user : any = req.user;
+    const username2 = req.params.username;
     try{
-        const friends : Array<IRelationship> = await RelationshipModel.find({$or : [{user1 : user._id}, {user2 : user._id}]}).select('user1 user2').populate('user1', 'firstname lastname username profileImage _id').populate('user2', 'firstname lastname username profileImage _id').exec();
+        const userId2 : any = await ProfileModel.findOne({username : username2}).select('_id').exec();
+        const friends : Array<IRelationship> = await RelationshipModel.find({$or : [{user1 : userId2}, {user2 : userId2}]}).select('user1 user2').populate('user1', 'firstname lastname username profileImage _id').populate('user2', 'firstname lastname username profileImage _id').exec();
         const response = [];
         for(let i = 0; i < friends.length; i++){
             let user1 : any = friends[i].user1;
             let user2 : any = friends[i].user2;
             let person = {};
-            if(user.equals(user1._id)){
+            if(userId2.equals(user1._id)){
                 person = {
                     firstname: user2.firstname,
                     lastname: user2.lastname,
